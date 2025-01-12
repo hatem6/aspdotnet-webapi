@@ -4519,11 +4519,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\hatem\\Desktop\\dotnet-test\\simple-crud\\simple-crud.csproj",
+      "projectUniqueName": "C:\\Users\\hatem\\Desktop\\dotnet-test\\aspdotnet-crud\\simple-crud.csproj",
       "projectName": "simple-crud",
-      "projectPath": "C:\\Users\\hatem\\Desktop\\dotnet-test\\simple-crud\\simple-crud.csproj",
+      "projectPath": "C:\\Users\\hatem\\Desktop\\dotnet-test\\aspdotnet-crud\\simple-crud.csproj",
       "packagesPath": "C:\\Users\\hatem\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\hatem\\Desktop\\dotnet-test\\simple-crud\\obj\\",
+      "outputPath": "C:\\Users\\hatem\\Desktop\\dotnet-test\\aspdotnet-crud\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\hatem\\AppData\\Roaming\\NuGet\\NuGet.Config"
