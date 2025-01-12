@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Product</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+        input[type="text"], input[type="number"] {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        #message {
+            margin-top: 20px;
+            color: green;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Add a New Product</h1>
+    <form id="productForm">
+        <label for="name">Product Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="price">Product Price:</label>
+        <input type="number" id="price" name="price" step="0.01" required>
+
+        <button type="submit">Add Product</button>
+    </form>
+
+    <div id="message"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+      document.getElementById('productForm').addEventListener('submit', function (event) {
+    event.preventDefault(); // Prevent the form from submitting the default way
+
+    // Get form data
+    const name = document.getElementById('name').value;
+    const price = parseFloat(document.getElementById('price').value);
+
+    // Create the product object
+    const product = {
+        name: name,
+        price: price
+    };
+
+    // Send a POST request to the API
+    axios.post('http://localhost:5124/api/products', product)
+        .then(response => {
+            // Display success message
+            document.getElementById('message').textContent = 'Product added successfully!';
+            document.getElementById('message').style.color = 'green';
+
+            // Clear the form
+            document.getElementById('productForm').reset();
+        })
+        .catch(error => {
+            // Display error message
+            document.getElementById('message').textContent = 'Error adding product: ' + error.message;
+            document.getElementById('message').style.color = 'red';
+        });
+});
+    </script>
+</body>
+</html>
